@@ -14,7 +14,7 @@ defmodule MyChatApp.Mixfile do
   #
   # Type "mix help compile.app" for more information
   def application do
-    [applications: [:logger],
+    [applications: [:logger, :registry],
      mod: {MyChatApp, []}]
   end
 
@@ -28,6 +28,8 @@ defmodule MyChatApp.Mixfile do
   #
   # Type "mix help deps" for more examples and options
   defp deps do
-    []
+    [
+      {:registry, github: "elixir-lang/registry"}
+    ]
   end
 end
