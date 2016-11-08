@@ -21,8 +21,8 @@ defmodule MyChatApp.ChatRoom do
     {:noreply, %{state | topic: new_topic}}
   end
 
-  def handle_call(:get_topic, _from, %State{topic: topic} = state) do
-    {:reply, topic, state}
+  def handle_call(:get_topic, _from, state) do
+    {:reply, state.topic, state}
   end
 
   defp via_name(name) do
